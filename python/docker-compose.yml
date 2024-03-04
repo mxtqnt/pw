@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  nginx:
+    image: local/my-custom-nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/static-content:/usr/share/nginx/html:ro
+    ports:
+      - "6680:80"
+  app:
+    build: .
+    restart: always
+    container_name: pweb-py
+    volumes:
+      - ./web:/app:ro
+    working_dir: /app

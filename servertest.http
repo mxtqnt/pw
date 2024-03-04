@@ -1,0 +1,11 @@
+POST http://localhost:6680/app/feedback
+Content-Type: application/x-www-form-urlencoded
+
+name = asdasda &
+email = asdasd%40asdads.com &
+feedback = asdasdasd
+
+###
+
+GET http://localhost:6680/app
+
